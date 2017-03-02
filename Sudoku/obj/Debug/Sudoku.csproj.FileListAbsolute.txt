@@ -1,0 +1,6 @@
+c:\users\jeff\documents\visual studio 2015\Projects\Sudoku\bin\Debug\Sudoku.pdb
+c:\users\jeff\documents\visual studio 2015\Projects\Sudoku\obj\Debug\Sudoku.csprojResolveAssemblyReference.cache
+c:\users\jeff\documents\visual studio 2015\Projects\Sudoku\obj\Debug\Sudoku.pdb
+C:\Users\Jeff\Documents\Visual Studio 2015\Projects\Sudoku\bin\Debug\Sudoku.dll.config
+C:\Users\Jeff\Documents\Visual Studio 2015\Projects\Sudoku\bin\Debug\Sudoku.dll
+C:\Users\Jeff\Documents\Visual Studio 2015\Projects\Sudoku\obj\Debug\Sudoku.dll

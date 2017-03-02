@@ -1,0 +1,8 @@
+C:\Users\Jeff\Documents\Visual Studio 2015\Projects\Sudoku\SudokuConsoleApplication\obj\Debug\SudokuConsoleApplication.csprojResolveAssemblyReference.cache
+C:\Users\Jeff\Documents\Visual Studio 2015\Projects\Sudoku\SudokuConsoleApplication\bin\Debug\SudokuConsoleApplication.exe.config
+C:\Users\Jeff\Documents\Visual Studio 2015\Projects\Sudoku\SudokuConsoleApplication\bin\Debug\SudokuConsoleApplication.exe
+C:\Users\Jeff\Documents\Visual Studio 2015\Projects\Sudoku\SudokuConsoleApplication\bin\Debug\SudokuConsoleApplication.pdb
+C:\Users\Jeff\Documents\Visual Studio 2015\Projects\Sudoku\SudokuConsoleApplication\bin\Debug\Sudoku.dll
+C:\Users\Jeff\Documents\Visual Studio 2015\Projects\Sudoku\SudokuConsoleApplication\bin\Debug\Sudoku.pdb
+C:\Users\Jeff\Documents\Visual Studio 2015\Projects\Sudoku\SudokuConsoleApplication\obj\Debug\SudokuConsoleApplication.exe
+C:\Users\Jeff\Documents\Visual Studio 2015\Projects\Sudoku\SudokuConsoleApplication\obj\Debug\SudokuConsoleApplication.pdb

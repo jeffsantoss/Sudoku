@@ -1,0 +1,9 @@
+c:\users\jeff\documents\visual studio 2015\Projects\SudokuTests\bin\Debug\SudokuTests.dll
+c:\users\jeff\documents\visual studio 2015\Projects\SudokuTests\bin\Debug\SudokuTests.pdb
+c:\users\jeff\documents\visual studio 2015\Projects\SudokuTests\bin\Debug\Sudoku.pdb
+c:\users\jeff\documents\visual studio 2015\Projects\SudokuTests\obj\Debug\SudokuTests.csprojResolveAssemblyReference.cache
+c:\users\jeff\documents\visual studio 2015\Projects\SudokuTests\obj\Debug\SudokuTests.dll
+c:\users\jeff\documents\visual studio 2015\Projects\SudokuTests\obj\Debug\SudokuTests.pdb
+C:\Users\Jeff\Documents\Visual Studio 2015\Projects\SudokuTests\bin\Debug\Sudoku.dll
+C:\Users\Jeff\Documents\Visual Studio 2015\Projects\SudokuTests\bin\Debug\SudokuConsoleApplication.exe
+C:\Users\Jeff\Documents\Visual Studio 2015\Projects\SudokuTests\bin\Debug\SudokuConsoleApplication.pdb
