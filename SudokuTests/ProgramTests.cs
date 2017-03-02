@@ -17,33 +17,20 @@ namespace SudokuConsoleApplication.Tests
         [ExpectedException(typeof(ArgumentException))]
         public void ConverterStringParaArrayParaValoresQueNaoContemNumero()
         {
-            Program.ConverterStringParaArray("-12345");
+            string valor = "-12345";
+            valor.ConverterStringParaArray();
         }
 
         [TestMethod()]
         [ExpectedException(typeof(ArgumentException))]
         public void ConverterStringParaArrayParaValoresMaioresQue9()
         {
-            Program.ConverterStringParaArray("0123456789");
-        }
+            var valor = "0123456789";
 
-        [TestMethod()]
-        public void RetornandoQuadrante_0_Se_Linha_Coluna_0_0()
-        {
-            Assert.AreEqual(0,Program.SelecionarQuadrante(0,0));
-        }
+            int[] expected = valor.ConverterStringParaArray();
+            int[] actual = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
-
-        [TestMethod()]
-        public void RetornandoQuadrante_4_Se_Linha_Coluna_4_3()
-        {
-            Assert.AreEqual(4, Program.SelecionarQuadrante(4, 3));
-        }
-
-        [TestMethod()]
-        public void RetornandoQuadrante_9_Se_Linha_Coluna_8_8()
-        {
-            Assert.AreEqual(8, Program.SelecionarQuadrante(8, 8));
+            CollectionAssert.AreEqual(expected, actual);
         }
 
     }

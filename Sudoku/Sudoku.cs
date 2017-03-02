@@ -22,7 +22,7 @@ namespace Sudoku_
             {
                 var linha = quadrante.linhaQuadrante(i);
 
-                if (quadrante.temValorRepetido(linha))
+                if (linha.temValorRepetido())
                     throw new ArgumentException("Verifique sua linha: " + i);
                 else if (linha.Contains(0))
                     throw new ArgumentException("Linha com elementos vazios!!");
@@ -36,7 +36,7 @@ namespace Sudoku_
             {
                 var coluna = quadrante.colunaQuadrante(i);
 
-                if (quadrante.temValorRepetido(coluna))
+                if (coluna.temValorRepetido())
                     throw new ArgumentException("Verifique sua coluna: " + i);
                 else if(coluna.Contains(0))
                     throw new ArgumentException("Coluna com elementos vazios!!");

@@ -24,9 +24,12 @@ namespace SudokuConsoleApplication
                 if (userInput == 1)
                     sudoku.quadrante = CriarSudoku(ref quadrantes);
                 else if (userInput == 2)
+                {
+                    sudoku.quadrante = sudoku.quadrante.FormarQuadrante9x9(quadrantes);
                     imprimir(sudoku.quadrante);
+                }
                 else if (userInput == 3)
-                    EditarQuadrantes(ref sudoku,quadrantes);
+                    EditarQuadrantes(ref quadrantes);
                 else if (userInput == 4)
                     Validar(sudoku);
 
@@ -67,26 +70,24 @@ namespace SudokuConsoleApplication
 
         }
 
-        private static void EditarQuadrantes(ref Sudoku sudoku,List<Quadrante> quadrantes)
+        private static void EditarQuadrantes(ref List<Quadrante> quadrantes)
         {
-            int i, j, novoValor;
-            EscolherLinhasEColunas(out i, out j, out novoValor);
+          
+            Console.Write("Quadrante: ");
+            var index = int.Parse(Console.ReadLine());
+            int[] valoresQuadrante = index.QuandranteporIndex(quadrantes);
 
-            var indexquadrante = SelecionarQuadrante(i, j);
 
-            var quadranteAeditar = quadrantes[indexquadrante];
+            Console.Write("Valores do quadrante: ");
+            foreach (var item in valoresQuadrante)
+                Console.Write(item + "  ");
 
-            var valorAntigo = quadranteAeditar.valores[i, j];
+            Console.WriteLine("");
 
-            try
-            {
-                Console.WriteLine("valor antigo: {0} ", valorAntigo);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Verifique o valor da sua linha ou coluna");
-                return;
-            }
+            Console.Write("Posição: ");
+            var posicao = int.Parse(Console.ReadLine());
+            Console.Write("Novo valor: ");
+            var novoValor = int.Parse(Console.ReadLine());
 
             if (novoValor > 9 || novoValor < 0)
             {
@@ -95,52 +96,24 @@ namespace SudokuConsoleApplication
                 return;
             }
 
-            quadrantes[indexquadrante].valores[i, j] = novoValor;
-
-            if (quadranteAeditar.temValorRepetido(quadranteAeditar.transformarMatrizEmArray()))
+            if (posicao > 8 || posicao < 0)
             {
-                Console.WriteLine("Existe valores repetidos, valor de '{0}' para '{1}' não alterado.", valorAntigo, novoValor);
-                quadranteAeditar.valores[i, j] = valorAntigo;
+                Console.WriteLine("Posicao inválida!", posicao);
                 Console.ReadLine();
                 return;
             }
 
-            var quadrante9x9 = sudoku.quadrante.FormarQuadrante9x9(quadrantes);
-            sudoku.quadrante = quadrante9x9;
-        }
+            var valorAntigo = valoresQuadrante[posicao];
+            
+            if (valoresQuadrante.Contains(novoValor))
+            {
+                Console.WriteLine("Existe valores repetidos, valor de '{0}' para '{1}' não alterado.", valorAntigo, novoValor);
+                Console.ReadLine();
+                return;
+            }
 
-        private static void EscolherLinhasEColunas(out int i, out int j, out int novoValor)
-        {
-            Console.WriteLine("Linha: ");
-            i = int.Parse(Console.ReadLine());
-            Console.WriteLine("Coluna: ");
-            j = int.Parse(Console.ReadLine());
-            Console.Write("Novo valor: ");
-            novoValor = int.Parse(Console.ReadLine());
-        }
-
-        public static int SelecionarQuadrante(int linha, int coluna)
-        {
-            if (coluna <= 2 && linha <= 2)
-                return 0;
-            else if (coluna <= 5 && linha <= 2)
-                return 1;
-            else if (coluna <= 8 && linha <= 2)
-                return 2;
-            else if (coluna <= 2 && linha <= 5)
-                return 3;
-            else if (coluna <= 5 && linha <= 5)
-                return 4;
-            else if (coluna <= 8 && linha <= 5)
-                return 5;
-            else if (coluna <= 2 && linha <= 8)
-                return 6;
-            else if (coluna <= 5 && linha <= 8)
-                return 7;
-            else if (coluna <= 8 && linha <= 8)
-                return 8;
-
-            return 0;
+            valoresQuadrante[posicao] = novoValor;
+            quadrantes[index].PreencherQuadrante(valoresQuadrante);
         }
 
         public static Quadrante CriarSudoku(ref List<Quadrante> quadrantes)
@@ -185,7 +158,7 @@ namespace SudokuConsoleApplication
             {
                 for (int j = 0;j < quadrante.qtdColunas; j++)
                 {
-                    Console.Write(" {0},{1}: {2} ", i, j, quadrante.valores[i, j]);
+                    Console.Write(" {0} ", quadrante.valores[i, j]);
                     if (j == 2 || j == 5)
                         Console.Write("\t");                  
                 }

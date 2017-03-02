@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sudoku_
 {
-    static class Util
+    public static class Util
     {
         public static int[] transformarMatrizEmArray(this Quadrante quadrante)
         {
@@ -28,7 +28,7 @@ namespace Sudoku_
             return result.Count == 0 ? false : true;
         }
 
-        public static int[] ConverterStringParaArray(string valores)
+        public static int[] ConverterStringParaArray(this string valores)
         {
             if (valores.Length > 9 || valores.Any(c => !char.IsDigit(c)))
                 throw new ArgumentException("Verifique sua entrada. Valores aceitos 1-9");
@@ -44,5 +44,13 @@ namespace Sudoku_
 
             return resultado;
         }
+
+        public static int[] QuandranteporIndex(this int index,List<Quadrante> quadrantes)
+        {
+            return quadrantes[index].transformarMatrizEmArray();
+        }
+
+
+
     }
 }

@@ -16,15 +16,17 @@ namespace Sudoku_
 
         public Quadrante(int[] valoresLinhas)
         {
+
             var valoresMaioresMenores = valoresLinhas.Where(v => v > 9 || v < 0);
-          
-            if (this.temValorRepetido(valoresLinhas) || valoresMaioresMenores.ToList() == null)
+
+            if (valoresLinhas.temValorRepetido() || valoresMaioresMenores.ToList() == null)
                 throw new ArgumentException("Valores só podem ser passados entre 1-9 não repetidos");
 
             PreencherQuadrante(valoresLinhas);
         }
 
-        private void PreencherQuadrante(int[] valoresLinhas)
+        public void PreencherQuadrante(int[] valoresLinhas)
+
         {
             this.valores = new int[this.qtdLinhas, this.qtdColunas];
 
@@ -46,7 +48,7 @@ namespace Sudoku_
             }
         }
 
-        private void PreencherQuadrante9x9(int[] valoresLinhas)
+        public void PreencherQuadrante9x9(int[] valoresLinhas)
         {
             var listAux = new int[9];
             int indexListaux = 0, k = 0;
@@ -142,6 +144,8 @@ namespace Sudoku_
 
             return result;
         }
+
+        /*
         public int[] transformarMatrizEmArray()
         {
             int[] result = new int[this.valores.Length];
@@ -160,6 +164,7 @@ namespace Sudoku_
 
             return result.Count == 0 ? false : true;
         } 
+        */
 
     }
 }
