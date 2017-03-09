@@ -144,28 +144,6 @@ namespace Sudoku_
 
             return result;
         }
-
-        /*
-        public int[] transformarMatrizEmArray()
-        {
-            int[] result = new int[this.valores.Length];
-            int i = 0;
-
-            foreach (var valor in this.valores)
-                result[i++] = valor;
-
-            return result;
-        }
-        public bool temValorRepetido(int[] sequencia)
-        {
-            var valorRepetido = sequencia.Where(v => sequencia.Count(v1 => v1 == v && v1 != 0) >= 2);
-
-            var result = valorRepetido.ToList();
-
-            return result.Count == 0 ? false : true;
-        } 
-        */
-
     }
 }
 
